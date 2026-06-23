@@ -233,7 +233,7 @@ uv run ruff format .
 
 A huge thanks to the following sources on which CVE2PoC relies on:  
 - [National Vulnerability Database (NVD)](https://nvd.nist.gov/)
-- [FIRST EPSS](https://www.first.org/)
+- [FIRST EPSS](https://www.first.org/epss/)
 - [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 - [The CVE Program](https://www.cve.org/)
 - [Nomi-sec ](https://github.com/nomi-sec/PoC-in-GitHub)
