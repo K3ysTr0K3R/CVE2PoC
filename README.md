@@ -7,18 +7,17 @@ CVE2PoC is a tool that helps penetration testers, bug hunters, and security rese
 
 # Features
 
-- 🔍**Public Exploits Aggregation:** Search and centralize public exploits from GitHub, Nuclei, ExploitDB and Metasploit
-- 🐋**Isolated Testing Environments:** Docker-based environments for safe exploit testing
-- 📊**CVE Intelligence:** Retrieve CVSS, CWE, EPSS, CISA KEV, Vector String
-- 📢**Security Advisories:** Vendor advisories and GHSA references
-- 📝**Report Generation:** Detailed technical report
-- ✨**Ease of Use:** Simple setup and intuitive usage
-- 🎯**Hands-on Labs:** HackTheBox and TryHackMe labs related to a CVE ID
-- 🐞**Bug Bounty Reports:** Bug Bounty write-ups related to a CVE ID
-- ↔️**CVE/CPE Mapping:** Retrieve CVEs related to a CPE and vice-versa
+- 🔍 **Public Exploits Aggregation:** Search and centralize public exploits from GitHub, Nuclei, ExploitDB and Metasploit
+- 🐳 **Isolated Testing Environments:** Docker-based environments for safe exploit testing
+- 📊 **CVE Intelligence:** Retrieve CVSS, CWE, EPSS, CISA KEV, Vector String
+- 📢 **Security Advisories:** Vendor advisories and GHSA references
+- 📝 **Report Generation:** Detailed technical report
+- ✨ **Ease of Use:** Simple setup and intuitive usage
+- 🎯 **Hands-on Labs:** HackTheBox and TryHackMe labs related to a CVE ID
+- 🐞 **Bug Bounty Reports:** Bug Bounty write-ups related to a CVE ID
+- ↔️ **CVE/CPE Mapping:** Retrieve CVEs related to a CPE and vice-versa
 
 # Installation
-
 CVE2PoC can be installed using `pipx` or `uv`.  
 
 ## Pipx
