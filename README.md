@@ -160,9 +160,7 @@ cve2poc --cve2cpe <CVE ID>
 
 ## Examine an exploit documentation
 
-CVE2PoC has a feature similar to `searchsploit -x`, that allows you to read the `README` file of an exploit directly from your terminal.  
-
-This is handy especially if you need to have a quick understanding of how the exploit works without using your browser.  
+CVE2PoC has a feature similar to `searchsploit -x`, that allows you to read the `README` file of an exploit directly from your terminal. This is handy especially if you need to have a quick understanding of how the exploit works without using your browser.  
 
 To examine the exploit documentation, use this command:  
 
