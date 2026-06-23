@@ -60,7 +60,7 @@ options:
   -f FILE, --file FILE              Specify a file containing a list of CVE IDs
   -o OUTPUT, --output OUTPUT        Output directory to store the reports
   --cve2cpe CVE ID                  Retrieve CPEs related to a CVE ID
-  --cpe2cve CVE ID                  Retrieve CVEs related to a CPE
+  --cpe2cve CPE                     Retrieve CVEs related to a CPE
   -s FILE, --save FILE              Output file to save CPE2CVE results
   --labs CVE ID                     Search pre-built docker environments and CTFs related to a CVE ID
   --bugbounty-reports CVE ID        Search Bug Bounty reports related to a CVE ID
