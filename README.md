@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)
 ![Version 1.1](http://img.shields.io/badge/version-v1.0-orange.svg) ![License](https://img.shields.io/badge/license-GPLv3.0-red.svg) ![Maintained](https://img.shields.io/badge/Maintained%3F-Yes-96c40f)
 
-CVE2PoC is a tool that helps penetration testers, bug hunters, and security researchers quickly find public exploits or Proof-of-Concepts (PoCs) related to a CVE ID.  
+CVE2PoC is a tool that helps penetration testers, bug hunters, and security researchers quickly find public exploits, Proof-of-Concepts (PoCs), and advisories related to a CVE ID.  
 
 # Features
 
