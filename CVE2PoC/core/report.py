@@ -46,7 +46,7 @@ def generate_html_report(data, output_dir_path):
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>CVE2POC Report</title>
+        <title>CVE2PoC Report</title>
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
