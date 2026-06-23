@@ -186,7 +186,7 @@ cve2poc <CVE ID> --language <Programming Language>
 ![filter_pocs by_programming_language](assets/filter_by_programming_language.png)
 
 
-### Number of Exploits to Display
+### Limit The Number of Exploits to Display
 
 By default, CVE2PoC returns the top 10 exploits found on GitHub. Nevertheless, you can display more or fewer exploits using the `--limit` flag:  
 
