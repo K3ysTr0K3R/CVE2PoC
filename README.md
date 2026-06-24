@@ -96,7 +96,7 @@ cve2poc -f <file>
 
 ![report generation](assets/report_generation.gif)
 
-<img width="1762" height="852" alt="image" src="https://github.com/user-attachments/assets/6bfd5402-04a7-45a8-8a03-0998900d720e" />
+![CVE2PoC_report](assets/CVE2PoC_report.png)
 
 > By default, CVE2PoC automatically generates a detailed JSON and HTML reports in the current directory.  
 > To use a different output directory, use the `-o` flag.  
