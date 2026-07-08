@@ -109,7 +109,9 @@ cve2poc -f <file>
 ![CVE2PoC_report](assets/CVE2PoC_report.png)
 
 > By default, CVE2PoC automatically generates a detailed JSON and HTML reports in the current directory.  
-> To use a different output directory, use the `-o` flag.  
+To use a different output directory, use the `-o` flag.  
+
+To test this feature, you can use the provided [sample files](CVE2PoC/data/samples).
 
 
 ## CVE Description
