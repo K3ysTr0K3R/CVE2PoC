@@ -5,6 +5,16 @@
 
 CVE2PoC is a tool that helps penetration testers, bug hunters, and security researchers quickly find public exploits, Proof-of-Concepts (PoCs), and advisories related to a CVE ID.  
 
+# Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Post Installation Setup](#post-installation-setup)
+- [Linting and Formating](#linting-and-formating)
+- [Credits](#credits)
+- [Disclaimer](#disclaimer)
+
 # Features
 
 - 🔍 **Public Exploits Aggregation:** Search and centralize public exploits from GitHub, Nuclei, ExploitDB and Metasploit
