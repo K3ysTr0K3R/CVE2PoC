@@ -57,6 +57,11 @@ from CVE2PoC.core.cve import (
     download_cisa_kev,
     get_cve_references,
 )
+from CVE2PoC.core.mitigations import (
+    get_cveid_nuclei_template,
+    get_nuclei_remediations,
+    get_sentinelone_vulnerability_database_mitigations,
+)
 from CVE2PoC.core.config import BASE_DIR
 
 
@@ -86,6 +91,36 @@ def main():
     parser.add_argument(
         "-o", "--output", type=str, help="Output directory to store the reports"
     )
+    parser.add_argument("-l", "--language", help="Filter PoCs by programming language")
+    parser.add_argument(
+        "--limit", type=int, default=10, help="Number of PoCs to display"
+    )
+    parser.add_argument(
+        "-t",
+        "--threads",
+        metavar="",
+        type=int,
+        default=10,
+        help="Number of concurrent threads",
+    )
+    parser.add_argument(
+        "--labs",
+        type=str,
+        metavar="CVE ID",
+        help="Search pre-built docker environments and Hands-on labs related to a CVE ID",
+    )
+    parser.add_argument(
+        "--bugbounty-reports",
+        type=str,
+        metavar="CVE ID",
+        help="Search Bug Bounty reports related to a CVE ID",
+    )
+    parser.add_argument(
+        "--mitigations",
+        type=str,
+        metavar="CVE ID",
+        help="Remediation steps to fix a vulnerability",
+    )
     parser.add_argument(
         "--cve2cpe",
         type=str,
@@ -101,30 +136,6 @@ def main():
         type=str,
         metavar="FILE",
         help="Output file to save CPE2CVE results",
-    )
-    parser.add_argument(
-        "--labs",
-        type=str,
-        metavar="CVE ID",
-        help="Search pre-built docker environments and CTFs related to a CVE ID",
-    )
-    parser.add_argument(
-        "--bugbounty-reports",
-        type=str,
-        metavar="CVE ID",
-        help="Search Bug Bounty reports related to a CVE ID",
-    )
-    parser.add_argument("-l", "--language", help="Filter PoCs by programming language")
-    parser.add_argument(
-        "--limit", type=int, default=10, help="Number of PoCs to display"
-    )
-    parser.add_argument(
-        "-t",
-        "--threads",
-        metavar="",
-        type=int,
-        default=10,
-        help="Number of concurrent threads",
     )
     parser.add_argument(
         "--api-keys",
@@ -262,7 +273,30 @@ def main():
         else:
             rprint("[red3][-][/red3] README.md was not found!")
             sys.exit(1)
-
+    
+    # Remediation steps to fix a vulnerability
+    if args.mitigations:
+        cve_id = args.mitigations
+        if not check_cve_id_format(cve_id):
+            rprint("[red3][-][/red3] The CVE ID format is incorrect (e.g: CVE-2025-55182)")
+            sys.exit(1)
+        # Retrieve remediation steps from Nuclei
+        nuclei_template = get_cveid_nuclei_template(cve_id)
+        if nuclei_template:
+            nuclei_remediation_steps = get_nuclei_remediations(nuclei_template)
+        else:
+            nuclei_remediation_steps = 'N/A'
+        # Retrieve remediation steps from SentinelOne Vulnerability Database
+        sentinelone_vulnerability_database_mitigations_url = get_sentinelone_vulnerability_database_mitigations(cve_id)
+        # Display remediation steps
+        if nuclei_remediation_steps != 'N/A':
+            print(f'- {nuclei_remediation_steps.strip()}')
+        if sentinelone_vulnerability_database_mitigations_url != 'N/A':
+            print(f"- For more information, refer here: {sentinelone_vulnerability_database_mitigations_url}")
+        if nuclei_remediation_steps == 'N/A' and sentinelone_vulnerability_database_mitigations_url == 'N/A':
+            rprint(f'[red3][-][/red3] No remediation steps found for {cve_id}!')
+        sys.exit(0)
+    
     # Return all CVE IDs related to a CPE
     if args.cpe2cve:
         cpe = args.cpe2cve
