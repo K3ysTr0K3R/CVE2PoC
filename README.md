@@ -66,8 +66,9 @@ CVE2PoC usage is straightforward. You can use it by simply specifying a CVE ID.
 Refer to the help menu and the demonstration section below to better understand the tool's features.  
 
 ```                                      
-usage: cve2poc.py [-h] [-x] [-d] [-f FILE] [-o OUTPUT] [-l LANGUAGE] [--limit LIMIT] [-t] [--labs CVE ID] [--bugbounty-reports CVE ID]
-                   [--mitigations CVE ID] [--cve2cpe CVE ID] [--cpe2cve CPE] [-s FILE] [--api-keys] [--no-banner]
+usage: cve2poc.py [-h] [-x] [-d] [-f FILE] [-o OUTPUT] [-l LANGUAGE] [--limit LIMIT] [-t] [--labs CVE ID]
+                  [--bugbounty-reports CVE ID] [--mitigations CVE ID] [--cve2cpe CVE ID] [--cpe2cve CPE] [-s FILE]
+                  [--api-keys] [--no-banner]
                   [cve]
 
 A simple yet powerful tool to quickly find PoCs related to a CVE ID
@@ -124,7 +125,7 @@ cve2poc -f <file>
 > By default, CVE2PoC automatically generates a detailed JSON and HTML reports in the current directory.  
 To use a different output directory, use the `-o` flag.  
 
-To test this feature, you can use the provided [sample files](CVE2PoC/data/samples).
+To test this feature, use the provided [sample files](CVE2PoC/data/samples).
 
 
 ## CVE Description
@@ -183,6 +184,7 @@ cve2poc --examine <GitHub Clone URL>
 
 ![examine_exploit_readme](assets/examine_exploit.gif)
 
+> The **GitHub Clone URL** is the URL returned by CVE2PoC for each PoC.  
 
 ## CPE to CVE IDs
 
