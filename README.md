@@ -10,6 +10,16 @@ CVE2PoC is a tool that helps penetration testers, bug hunters, and security rese
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+   * [Public Exploits Research](#public-exploits-research)
+   * [Report Generation](#report-generation)
+   * [CVE Description](#cve-description)
+   * [Vulnerable Docker Environment and Hands-on Labs](#vulnerable-docker-environment-and-hands-on-labs)
+   * [Bug Bounty Reports](#bug-bounty-reports)
+   * [Remediation Steps](#remediation-steps)
+   * [Exploit Documentation](#exploit-documentation)
+   * [CPE to CVE IDs](#cpe-to-cve-ids)
+   * [CVE ID to CPEs](#cve-id-to-cpes)
+   * [Filters](#filters)
 - [Post Installation Setup](#post-installation-setup)
 - [Linting and Formating](#linting-and-formating)
 - [Credits](#credits)
@@ -25,9 +35,11 @@ CVE2PoC is a tool that helps penetration testers, bug hunters, and security rese
 - ✨ **Ease of Use:** Simple setup and intuitive usage
 - 🎯 **Hands-on Labs:** HackTheBox and TryHackMe labs related to a CVE ID
 - 🐞 **Bug Bounty Reports:** Bug Bounty write-ups related to a CVE ID
+- 🛠️ **Remediation Steps**: Remediation steps to fix a vulnerability 
 - ↔️ **CVE/CPE Mapping:** Retrieve CVEs related to a CPE and vice-versa
 
 # Installation
+
 CVE2PoC can be installed using `pipx` or `uv`.  
 
 ## Pipx
@@ -54,8 +66,8 @@ CVE2PoC usage is straightforward. You can use it by simply specifying a CVE ID.
 Refer to the help menu and the demonstration section below to better understand the tool's features.  
 
 ```                                      
-usage: cve2poc.py [-h] [-x] [-d] [-f FILE] [-o OUTPUT] [--cve2cpe CVE ID] [--cpe2cve CVE ID] [-s FILE] [--labs CVE ID]
-                  [--bugbounty-reports CVE ID] [-l LANGUAGE] [--limit LIMIT] [-t] [--api-keys] [--no-banner]
+usage: cve2poc.py [-h] [-x] [-d] [-f FILE] [-o OUTPUT] [-l LANGUAGE] [--limit LIMIT] [-t] [--labs CVE ID] [--bugbounty-reports CVE ID]
+                   [--mitigations CVE ID] [--cve2cpe CVE ID] [--cpe2cve CPE] [-s FILE] [--api-keys] [--no-banner]
                   [cve]
 
 A simple yet powerful tool to quickly find PoCs related to a CVE ID
@@ -69,14 +81,15 @@ options:
   -d, --description                 Display a CVE ID description
   -f FILE, --file FILE              Specify a file containing a list of CVE IDs
   -o OUTPUT, --output OUTPUT        Output directory to store the reports
-  --cve2cpe CVE ID                  Retrieve CPEs related to a CVE ID
-  --cpe2cve CPE                     Retrieve CVEs related to a CPE
-  -s FILE, --save FILE              Output file to save CPE2CVE results
-  --labs CVE ID                     Search pre-built docker environments and CTFs related to a CVE ID
-  --bugbounty-reports CVE ID        Search Bug Bounty reports related to a CVE ID
   -l LANGUAGE, --language LANGUAGE  Filter PoCs by programming language
   --limit LIMIT                     Number of PoCs to display
   -t , --threads                    Number of concurrent threads
+  --labs CVE ID                     Search pre-built docker environments and Hands-on labs related to a CVE ID
+  --bugbounty-reports CVE ID        Search Bug Bounty reports related to a CVE ID
+  --mitigations CVE ID              Remediation steps to fix a vulnerability
+  --cve2cpe CVE ID                  Retrieve CPEs related to a CVE ID
+  --cpe2cve CPE                     Retrieve CVEs related to a CPE
+  -s FILE, --save FILE              Output file to save CPE2CVE results
   --api-keys                        Configure your GitHub and NVD API keys (Not required)
   --no-banner                       Remove banner
 ```
@@ -147,6 +160,30 @@ cve2poc --bugbounty-reports <CVE ID>
 ![search bug bounty reports](assets/search_bug_bounty_reports.png)
 
 
+## Remediation Steps
+
+To quickly identify remediation steps for a vulnerability, use this command:  
+
+```bash
+cve2poc --mitigations <CVE ID>
+```
+
+![remediation_steps](assets/remediation_steps.png)
+
+
+## Exploit Documentation
+
+CVE2PoC has a feature similar to `searchsploit -x`, that allows you to read the `README` file of an exploit directly from your terminal. This is handy especially if you need to have a quick understanding of how the exploit works without using your browser.  
+
+To examine the exploit documentation, use this command:  
+
+```bash
+cve2poc --examine <GitHub Clone URL>
+```
+
+![examine_exploit_readme](assets/examine_exploit.gif)
+
+
 ## CPE to CVE IDs
 
 To retrieve CVE IDs related to a CPE, run this command:  
@@ -167,19 +204,6 @@ cve2poc --cve2cpe <CVE ID>
 ```
 
 ![cve to cpess](assets/cve_to_cpes.png)
-
-
-## Examine an Exploit Documentation
-
-CVE2PoC has a feature similar to `searchsploit -x`, that allows you to read the `README` file of an exploit directly from your terminal. This is handy especially if you need to have a quick understanding of how the exploit works without using your browser.  
-
-To examine the exploit documentation, use this command:  
-
-```bash
-cve2poc --examine <GitHub Clone URL>
-```
-
-![examine_exploit_readme](assets/examine_exploit.gif)
 
 
 ##  Filters
