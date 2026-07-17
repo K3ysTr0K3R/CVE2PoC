@@ -10,7 +10,7 @@ CVE2PoC is a tool that helps penetration testers, bug hunters, and security rese
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-   * [Public Exploits Research](#public-exploits-research)
+   * [Public Exploits Finding](#public-exploits-research)
    * [Report Generation](#report-generation)
    * [CVE Description](#cve-description)
    * [Vulnerable Docker Environment and Hands-on Labs](#vulnerable-docker-environment-and-hands-on-labs)
@@ -96,7 +96,7 @@ options:
 ```
 
 
-## Public Exploits Research
+## Public Exploits Finding
 
 Run this command to search for public exploits related to a CVE ID:  
 
